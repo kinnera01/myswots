@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -156,8 +156,8 @@
 
 }
 ul.dropdown-menu.sub-menu{
-        min-height: 172px;
-    }
+       min-height: 172px;
+  }
 .caret {
   display:block;
   width: 0;
@@ -194,6 +194,7 @@ ul.dropdown-menu.sub-menu{
 	position: absolute;
 	pointer-events: none;
 }
+
 @media only screen and (max-width: 767px) {
 .dropdown-toggle .caret-right {
         display: none;
@@ -207,11 +208,10 @@ ul.dropdown-menu.sub-menu{
        ul.dropdown-menu.sub-menu{
         min-height:auto;
     } 
-  
+    }
     @media only screen and (min-width: 767px) {
       .mainmenu .collapse ul li {
         position: relative;
-        
       }
       .mainmenu .collapse ul li:hover>ul {
         display: block
@@ -223,7 +223,12 @@ ul.dropdown-menu.sub-menu{
         min-width: 250px;
         display: none
       }
-
+      .dropdown-toggle.ul.dropdown-menu.sub-menu{
+        min-height: auto;
+    }
+       ul.dropdown-menu.sub-menu{
+        min-height:auto;
+    }
       .dropdown-toggle .caret-right {
         display: inline;
       }
@@ -259,6 +264,7 @@ ul.dropdown-menu.sub-menu{
         display: none;
         z-index: 1;
       }
+       }
   </style>
   <script>
     (function($) {
@@ -321,7 +327,7 @@ ul.dropdown-menu.sub-menu{
                       </ul>
                     </li>
                     <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">SAT Prep<span class="caret-right"></span><span class="caret"</span></a>
-                        <ul class=" dropdown-menu sub-menu" style ="top:-86px;">
+                        <ul class=" dropdown-menu sub-menu"style="top:-86px">
                           <li><a href="#">Reading</a></li>
                           <li><a href="#">Writing & language</a></li>
                           <li><a href="#">Math</a></li>
