@@ -8,7 +8,7 @@
   <!-- <link href="css/style.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- <link rel="stylesheet" href="assets/css/mycss.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">  <!-- <link rel="stylesheet" href="assets/css/mycss.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
@@ -23,7 +23,7 @@
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+     font-family: 'Ubuntu', sans-serif;
     }
     /*
 1.1 Header Area
@@ -129,13 +129,14 @@
 
     .mainmenu .collapse ul ul ul,
     .mainmenu .collapse ul ul ul.dropdown-menu {
-      background: #0a1464
+      background:#0a1464;
     }
 
     .mainmenu .collapse ul ul ul ul,
     .mainmenu .collapse ul ul ul ul.dropdown-menu {
-      background: #e4eeb8
-    }
+      background: #e4eeb8;
+  
+}
     /******************************Drop-down menu work on hover**********************************/
 
     .mainmenu {
@@ -191,13 +192,36 @@
 .dropdown-toggle .caret-right {
         display: none;
       }
-      .dropdown-toggle .caret {
+ .dropdown-toggle .caret {
         display: inline;
       }
-      .dropdown-toggle .ul .dropdown-menu .sub-menu{
-        min-height: auto;
+
+ul.dropdown-menu.sub-menu{
+        min-height:auto;
     }
-      
+    .mainmenu .collapse ul ul,
+    .mainmenu .collapse ul ul.dropdown-menu {
+      background:linear-gradient(lightblue,lightgoldenrodyellow,lightcyan);
+    }
+    .mainmenu .collapse ul ul ul,
+    .mainmenu .collapse ul ul ul.dropdown-menu {
+       background:white;
+     
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+      /* color: blueviolet; */
+    border-bottom: 1px solid #D6D8DA !important;
+    color: inherit !important;
+    display: block !important;
+    font-size: 16px !important;
+    line-height: 30px !important;
+    overflow: hidden !important;
+
+}
+.navbar-default .navbar-nav .open .dropdown-menu.sub-menu>li>a{
+  margin-left:30px;
+  color:rebeccapurple;
+}
 }
     @media only screen and (min-width: 767px) {
       .mainmenu .collapse ul li {
@@ -213,10 +237,8 @@
         min-width: 250px;
         display: none
       }
-      .dropdown-toggle.ul.dropdown-menu.sub-menu{
-        min-height: auto;
-      } 
-         .dropdown-toggle .caret-right {
+      
+      .dropdown-toggle .caret-right {
         display: inline;
       }
       .dropdown-toggle .caret {
@@ -264,9 +286,6 @@
         });
       });
     })(jQuery);
-    // $('.dropdown-toggle').click(function() {
-    // $('.dropdown-menu').toggle('1000');
-    // $("i", this).toggleClass("caret caret-up");
   </script>
  <div id="header-area" class="header_area">
     <div class="header_bottom">
