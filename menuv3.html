@@ -15,41 +15,40 @@
 
 <body>
   <style>
-    /* @import url('https://fonts.googleapis.com/css?family=Roboto');
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
     a:hover,
     a:focus {
       text-decoration: none;
       outline: none;
     }
-
     body {
      font-family: 'Ubuntu', sans-serif;
-    } */
+    }
     /*
 1.1 Header Area
 ****************************************************/
     /*Bootstrap Reset*/
-
-    /* .navbar-nav>li>a {
+    .navbar-nav>li>a {
       padding-top: 0;
       padding-bottom: 0;
-    } */
-
-    .menumainmenu {
+    }
+    .mainmenu {
       background-color: transparent;
       border-color: transparent;
       margin-bottom: 0;
       border: 0px !important;
     }
-/* 
-    .navbar-dropdown>li:last-child>a {
+    .navbar-nav>li:last-child>a {
       padding-right: 0px;
       margin-right: 0px;
-    } */
+    }
     .dropdown-menu .sub-menu {
       position: absolute;
       top: 0;
-       }
+      /* visibility: hidden; */
+      /* margin-top: -1px; */
+      /* min-height: 100px; to change height of submenu */
+    }
     .dropdown-menu {
       padding: 0px 0;
       margin: 0 0 0;
@@ -64,27 +63,29 @@
        min-height: 172px;
   }
     /*=-====Main Menu=====*/
-    .navbar-dropdown.open .dropdown-menu>li>a {
+    .navbar-nav .open .dropdown-menu>li>a {
     padding: 10px;
     }
-     
-    .header_area .header_bottom .menumainmenu a,
-    .navbar-default .navbar-dropdown>li>a {
+    /* .header_bottom {
+      background: #0071ba
+    } */
+ 
+    .header_area .header_bottom .mainmenu a,
+    .navbar-default .navbar-nav>li>a {
       color:lightslategray;
       font-size: 16px;
       text-transform: capitalize;
       padding: 10px;
-      /* font-family: 'Roboto', sans-serif; */
+      font-family: 'Roboto', sans-serif;
     }
-
-    .header_area .menumainmenu .active a,
-    .header_area .menumainmenu .active a:focus,
-    .header_area .menumainmenu .active a:hover,
-    .header_area .menumainmenu li a:hover,
-    .header_area .menumainmenu li a:focus,
-    .navbar-default .navbar-dropdown>.open>a,
-    .navbar-default .navbar-dropdown>.open>a:focus,
-    .navbar-default .navbar-dropdown>.open>a:hover {
+    .header_area .mainmenu .active a,
+    .header_area .mainmenu .active a:focus,
+    .header_area .mainmenu .active a:hover,
+    .header_area .mainmenu li a:hover,
+    .header_area .mainmenu li a:focus,
+    .navbar-default .navbar-nav>.open>a,
+    .navbar-default .navbar-nav>.open>a:focus,
+    .navbar-default .navbar-nav>.open>a:hover {
       color: #0071ba;
       background: #54c6d4;
       outline: 0;
@@ -95,45 +96,43 @@
       border-color: #0071bd;
     }
     /*Toggle Button*/
-
     .navbar-default .navbar-toggle .icon-bar {
       background-color: #0071bd;     
     }
     /*Toggle Button*/
     /*==========Sub Menu=v==========*/
-
-    .menumainmenu.collapse ul>li:hover>a {
-      background: #54c6d4;
+    .mainmenu .collapse ul>li:hover>a {
+      background:rgba(0, 0, 0, .15);
+      /* border-radius:5px; */
     }
-
-    .menumainmenu .collapse ul ul>li:hover>a,
-    .navbar-default .navbar-dropdown .open .dropdown-menu>li>a:focus,
-    .navbar-default .navbar-dropdown .open .dropdown-menu>li>a:hover {
+    .mainmenu .collapse ul ul>li:hover>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
       background: rgba(0, 0, 0, .15);
     }
-
-    .menumainmenu .collapse ul ul ul>li:hover>a {
+    .mainmenu .collapse ul ul ul>li:hover>a {
       background:rgba(0, 0, 0, .15);
     }
-
-    .menumainmenu .collapse ul ul,
-    .menumainmenu .collapse ul ul.dropdown-menu {
-      background: #98D7E1;
+    .mainmenu .collapse ul ul,
+    .mainmenu .collapse ul ul.dropdown-menu {
+      background: white;
+      border:0.5px solid grey;
+      /* border-radius:10px; */
+        }
+    .mainmenu .collapse ul ul ul,
+    .mainmenu .collapse ul ul ul.dropdown-menu {
+      background:white;
+      border:0.5px solid grey;
+      /* border-radius:10px; */
+     
     }
-
-    .menumainmenu .collapse ul ul ul,
-    .menumainmenu.collapse ul ul ul.dropdown-menu {
-      background:#0a1464;
-    }
-
-    .menumainmenu .collapse ul ul ul ul,
-    .menumainmenu .collapse ul ul ul ul.dropdown-menu {
+    .mainmenu .collapse ul ul ul ul,
+    .mainmenu .collapse ul ul ul ul.dropdown-menu {
       background: #e4eeb8;
   
 }
     /******************************Drop-down menu work on hover**********************************/
-
-    .menumainmenu {
+    .mainmenu {
       background: none;
       border: 0 solid;
       margin: 0;
@@ -151,9 +150,7 @@
     height: 0;
     opacity: 0.8;
     width:2px;
-
 }
-
 .caret {
   display:block;
   width: 0;
@@ -180,8 +177,11 @@
   border-right: 4px solid transparent;
   content: "";
 }
+/* .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+  border-bottom:0.5px solid grey;
+} */
+  
 /* Mediascrens*/
-
 @media only screen and (max-width: 767px) {
 .dropdown-toggle .caret-right {
         display: none;
@@ -189,42 +189,44 @@
  .dropdown-toggle .caret {
         display: inline;
       }
-
 ul.dropdown-menu.sub-menu{
         min-height:auto;
     }
-    .menumainmenu .collapse ul ul,
-    .menumainmenu .collapse ul ul.dropdown-menu {
+    /* .mainmenu .collapse ul ul,
+    .mainmenu .collapse ul ul.dropdown-menu {
       background:linear-gradient(lightblue,lightgoldenrodyellow,lightcyan);
-    }
-    .menumainmenu .collapse ul ul ul,
-    .menumainmenu .collapse ul ul ul.dropdown-menu {
+    } */
+    .mainmenu .collapse ul ul ul,
+    .mainmenu .collapse ul ul ul.dropdown-menu {
        background:white;
      
     }
-    .navbar-default .navbar-dropdown .open .dropdown-menu>li>a {
-      /* color: blueviolet; */
-    border-bottom: 1px solid #D6D8DA !important;
-    color: inherit !important;
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+     border-bottom: 1px solid #D6D8DA !important;
+    /* color: inherit !important; */
     display: block !important;
     font-size: 16px !important;
     line-height: 30px !important;
     overflow: hidden !important;
-
 }
-.navbar-default .navbar-dropdown .open .dropdown-menu.sub-menu>li>a{
+.mainmenu .collapse ul ul ul,.mainmenu .collapse ul ul ul.dropdown-menu {
+      background:white;
+      border:none;
+      border-radius:none;
+    }
+.navbar-default .navbar-nav .open .dropdown-menu.sub-menu>li>a{
   margin-left:30px;
   color:rebeccapurple;
 }
 }
     @media only screen and (min-width: 767px) {
-      .menumainmenu .collapse ul li {
+      .mainmenu .collapse ul li {
         position: relative;
       }
-      .menumainmenu .collapse ul li:hover>ul {
+      .mainmenu .collapse ul li:hover>ul {
         display: block
       }
-      .menumainmenu .collapse ul ul {
+      .mainmenu .collapse ul ul {
         position: absolute;
         top: 100%;
         left: 0;
@@ -239,13 +241,13 @@ ul.dropdown-menu.sub-menu{
         display: none;
       }
       /*******/
-      .menumainmenu .collapse ul ul li {
+      .mainmenu .collapse ul ul li {
         position: relative
       }
-      .menumainmenu .collapse ul ul li:hover>ul {
+      .mainmenu .collapse ul ul li:hover>ul {
         display: block
       }
-      .menumainmenu .collapse ul ul ul {
+      .mainmenu .collapse ul ul ul {
         position: absolute;
         top: 0;
         left: 100%;
@@ -253,13 +255,13 @@ ul.dropdown-menu.sub-menu{
         display: none
       }
       /*******/
-      .menumainmenu .collapse ul ul ul li {
+      .mainmenu .collapse ul ul ul li {
         position: relative
       }
-      .menumainmenu .collapse ul ul ul li:hover ul {
+      .mainmenu .collapse ul ul ul li:hover ul {
         display: block
       }
-      .menumainmenu.collapse ul ul ul ul {
+      .mainmenu .collapse ul ul ul ul {
         position: absolute;
         top: 0;
         left: -100%;
@@ -285,7 +287,7 @@ ul.dropdown-menu.sub-menu{
     <div class="header_bottom">
       <div class="container">
         <div class="row">
-          <nav role="navigation" class="navbar navbar-inverse menumainmenu">
+          <nav role="navigation" class="navbar navbar-default mainmenu">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -297,18 +299,18 @@ ul.dropdown-menu.sub-menu{
             </div>
             <!-- Collection of nav links and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
-              <ul id="fresponsive" class="nav navbar-dropdown">
+              <ul id="fresponsive" class="nav navbar-nav dropdown">
                 <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle">Categories<span class="caret"></span></a>
                   <ul class=" dropdown-menu">
                     <li>
-                      <a href="#" data-toggle="dropdown" class="dropdown-toggle">Programming<span class="caret-right"></span><span class="caret"></span></a>
-                      <ul class="dropdown-menu sub-menu">
-                        <li><a href="#">C</a></li>
-                        <li><a href="#">Data structures</a></li>
-                        <li><a href="#">Java</a></li>
-                        <li><a href="#">DBMS-SQL</a></li>
-                        <li><a href="#">Python</a></li>
-                        <li><a href="#">Android Programming</a></li>
+                      <a href="#" data-toggle="dropdown" class="dropdown-toggle"style="color: #027d97">Programming<span class="caret-right"></span><span class="caret"></span></a>
+                      <ul class="dropdown-menu sub-menu"style="top:-1px">
+                        <li><a href="#"style="color: #027d97">C</a></li>
+                        <li><a href="#"style="color: #027d97">Data structures</a></li>
+                        <li><a href="#"style="color: #027d97">Java</a></li>
+                        <li><a href="#"style="color: #027d97">DBMS-SQL</a></li>
+                        <li><a href="#"style="color: #027d97">Python</a></li>
+                        <li><a href="#"style="color: #027d97">Android Programming</a></li>
                         <li>
                           <!-- <a href="#" data-toggle="dropdown" class="dropdown-toggle">Submenu 3<span class="caret"></span></a>
                           <ul class=" dropdown-menu">THIRDLEVEL DROPDOWN
@@ -318,27 +320,27 @@ ul.dropdown-menu.sub-menu{
                         </li>
                       </ul>
                     </li>
-                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Job Placements<span class="caret-right"></span><span class="caret"</span></a>
-                      <ul class=" dropdown-menu sub-menu" style="top:-43px">
-                        <li><a href="#">Quantitive Aptitude</a></li>
-                        <li><a href="#">Verbal Ability</a></li>
-                        <li><a href="#">Data Interpretation&Logical Reasoning</a></li>
-                        <li><a href="#">Logic and Reasoning</a></li>
+                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle"style="color:#0d923f">Job Placements<span class="caret-right"></span><span class="caret"</span></a>
+                      <ul class=" dropdown-menu sub-menu" style="top:-43.5px">
+                        <li><a href="#"style="color: #0d923f">Quantitive Aptitude</a></li>
+                        <li><a href="#"style="color: #0d923f">Verbal Ability</a></li>
+                        <li><a href="#"style="color: #0d923f">Data Interpretation&Logical Reasoning</a></li>
+                        <li><a href="#"style="color: #0d923f">Logic and Reasoning</a></li>
                       </ul>
                     </li>
-                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">SAT Prep<span class="caret-right"></span><span class="caret"</span></a>
+                    <li><a href="#" data-toggle="dropdown" class="dropdown-toggle"style="color:#543b78">SAT Prep<span class="caret-right"></span><span class="caret"</span></a>
                         <ul class=" dropdown-menu sub-menu"style="top:-86px">
-                          <li><a href="#">Reading</a></li>
-                          <li><a href="#">Writing & language</a></li>
-                          <li><a href="#">Math</a></li>
+                          <li><a href="#"style="color: #543b78">Reading</a></li>
+                          <li><a href="#"style="color: #543b78">Writing & language</a></li>
+                          <li><a href="#"style="color: #543b78">Math</a></li>
                         </ul>
                       </li>
-                      <li><a href="#" data-toggle="dropdown" class="dropdown-toggle">Engineering<span class="caret-right"></span><span class="caret"</span></a>
+                      <li><a href="#" data-toggle="dropdown" class="dropdown-toggle"style="color: #9e034e">Engineering<span class="caret-right"></span><span class="caret"</span></a>
                         <ul class=" dropdown-menu sub-menu"style="top:-129px">
-                          <li><a href="#">Microprocessor & Microcontroller</a></li>
-                          <li><a href="#">Analog & Digital Engineering </a></li>
-                          <li><a href="#">Instrumentation</a></li>
-                          <li><a href="#">Logic and Reasoning</a></li>
+                          <li><a href="#"style="color: #9e034e">Microprocessor & Microcontroller</a></li>
+                          <li><a href="#"style="color: #9e034e">Analog & Digital Engineering </a></li>
+                          <li><a href="#"style="color: #9e034e">Instrumentation</a></li>
+                          <li><a href="#"style="color: #9e034e">Logic and Reasoning</a></li>
                         </ul>
                       </li>
                   </ul>
